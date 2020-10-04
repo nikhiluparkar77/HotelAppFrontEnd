@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
+import AuthAdminReducer from "./AuthAdminReducer";
 import AuthReducer from "./AuthReducer";
-import SongReducer from "./SongReducer";
 
-export default combineReducers( {
-    auth: AuthReducer,
-    songs: SongReducer
-} );
+export default combineReducers({
+  auth: AuthReducer,
+  adminAuth: AuthAdminReducer,
+});

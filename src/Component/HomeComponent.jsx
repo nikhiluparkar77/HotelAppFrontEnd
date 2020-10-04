@@ -1,23 +1,23 @@
-import React from 'react';
-import Slider from './Home/Slider/Slider';
+import React from "react";
+import Slider from "./Home/Slider/Slider";
 import Filter from "./Home/Filter/Filter";
-import AboutHotel from './Home/AboutHotel/AboutHotel';
-import ServicesPart from './Home/ServicesPart/ServicesPart';
-import DiscoveryPart from './Home/DiscoveryPart/DiscoveryPart';
-import ClientReview from './Home/ClientReview/ClientReview';
-import SellingPart from './Home/SellingPart/SellingPart';
+import AboutHotel from "./Home/AboutHotel/AboutHotel";
+import ServicesPart from "./Home/ServicesPart/ServicesPart";
+import DiscoveryPart from "./Home/DiscoveryPart/DiscoveryPart";
+import ClientReview from "./Home/ClientReview/ClientReview";
+import SellingPart from "./Home/SellingPart/SellingPart";
 const HomeComponent = () => {
-    return (
-        <div>
-            <Slider />
+  return (
+    <div>
+      <Slider />
 
-            <AboutHotel />
-            <SellingPart />
-            <ServicesPart />
-            <DiscoveryPart />
-            <ClientReview />
-        </div>
-    );
+      <AboutHotel />
+      <SellingPart />
+      <ServicesPart />
+      <DiscoveryPart />
+      <ClientReview />
+    </div>
+  );
 };
 
 export default HomeComponent;

@@ -1,3 +1,4 @@
+// User
 export const CURRENT_USER = "CURRENT_USER";
-
-export const SONGS = "SONGS";
+// Admin
+export const CURRENT_ADMIN = "CURRENT_ADMIN";
