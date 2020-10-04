@@ -31,7 +31,7 @@ const AdminSignIn = ({ FuncAdminSignIn, adminAuth }) => {
 
   useEffect(() => {
     if (adminAuth.isAdmnAuthenticated) {
-      history.push("/dashboard");
+      history.push("/admin/dashboard");
     }
   }, []);
 

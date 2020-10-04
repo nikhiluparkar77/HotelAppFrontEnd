@@ -1,7 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { adminLogout } from "../../../Redux/Action/Admin/AuthAdminAction";
 
-const AdminHeader = () => {
+const AdminHeader = ({ adminAuth, adminLogout }) => {
+  const LogoutAdmin = () => {
+    adminLogout();
+  };
+
+  const AdminLink = (
+    <>
+      <li className="nav-item">
+        <Link className="nav-link" to="/admin/sign-up">
+          New Admin
+        </Link>
+      </li>
+      <li className="nav-item dropdown">
+        <a
+          className="nav-link dropdown-toggle"
+          href="#"
+          id="navbardrop"
+          data-toggle="dropdown"
+        >
+          {" "}
+          <img
+            src={adminAuth.isAdmnAuthenticated.avatar}
+            className="rounded-circle"
+            style={{ width: "25px", marginRight: "5px" }}
+            alt={adminAuth.isAdmnAuthenticated.name}
+          />{" "}
+          {adminAuth.isAdmnAuthenticated.name}
+        </a>
+        <div className="dropdown-menu">
+          <Link className="dropdown-item" to="#" onClick={LogoutAdmin}>
+            Logout
+          </Link>
+        </div>
+      </li>
+    </>
+  );
+
   return (
     <div className="AdminHeader Header">
       <nav className="navbar navbar-dark bg-white navbar-expand-sm">
@@ -22,11 +61,7 @@ const AdminHeader = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbar-list-2">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Home Page
-                </Link>
-              </li>
+              {adminAuth.isAdmnAuthenticated ? AdminLink : null}
             </ul>
           </div>
         </div>
@@ -35,4 +70,16 @@ const AdminHeader = () => {
   );
 };
 
-export default AdminHeader;
+AdminHeader.propTypes = {
+  adminLogout: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  adminAuth: state.adminAuth,
+});
+
+const mapDispatchToProps = {
+  adminLogout,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminHeader);

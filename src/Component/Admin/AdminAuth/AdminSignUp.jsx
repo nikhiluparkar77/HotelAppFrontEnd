@@ -4,8 +4,9 @@ import { useHistory, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import TextBox from "../../Comman/Feilds/TextBox";
 import Button from "../../Comman/Feilds/Button";
+import { FuncAdminSignUp } from "../../../Redux/Action/Admin/AuthAdminAction";
 
-const AdminSignUp = ({ SignUpFunc }) => {
+const AdminSignUp = ({ FuncAdminSignUp }) => {
   const history = useHistory();
   const [State, SetState] = useState({
     name: "",
@@ -15,12 +16,12 @@ const AdminSignUp = ({ SignUpFunc }) => {
 
   const OnSubmit = (e) => {
     e.preventDefault();
-    const SignUpData = {
+    const AdminSignUpData = {
       name: State.name,
       email: State.email,
       password: State.password,
     };
-    SignUpFunc(SignUpData, history);
+    FuncAdminSignUp(AdminSignUpData, history);
   };
 
   const OnChange = (e) => {
@@ -74,8 +75,14 @@ const AdminSignUp = ({ SignUpFunc }) => {
   );
 };
 
-AdminSignUp.propTypes = {};
+AdminSignUp.propTypes = {
+  FuncAdminSignUp: PropTypes.func.isRequired,
+};
 
-const mapDispatchToProps = {};
+const mapStateToProps = (state) => ({});
 
-export default connect()(AdminSignUp);
+const mapDispatchToProps = {
+  FuncAdminSignUp,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminSignUp);
