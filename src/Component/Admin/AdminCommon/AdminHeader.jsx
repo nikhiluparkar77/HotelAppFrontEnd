@@ -11,10 +11,23 @@ const AdminHeader = ({ adminAuth, adminLogout }) => {
 
   const AdminLink = (
     <>
-      <li className="nav-item">
-        <Link className="nav-link" to="/admin/sign-up">
-          New Admin
-        </Link>
+      <li className="nav-item dropdown">
+        <a
+          className="nav-link dropdown-toggle"
+          href="#"
+          id="navbardrop"
+          data-toggle="dropdown"
+        >
+          Admin
+        </a>
+        <div className="dropdown-menu">
+          <Link className="dropdown-item" to="/admin/sign-up">
+            Add New
+          </Link>
+          <Link className="dropdown-item" to="/admin/list">
+            List
+          </Link>
+        </div>
       </li>
       <li className="nav-item dropdown">
         <a
@@ -71,6 +84,7 @@ const AdminHeader = ({ adminAuth, adminLogout }) => {
 };
 
 AdminHeader.propTypes = {
+  adminLogout: PropTypes.func.isRequired,
   adminLogout: PropTypes.func.isRequired,
 };
 

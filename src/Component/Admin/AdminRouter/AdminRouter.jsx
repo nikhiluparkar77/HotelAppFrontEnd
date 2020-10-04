@@ -5,6 +5,7 @@ import AdminSignIn from "../AdminAuth/AdminSignIn";
 import AdminSignUp from "../AdminAuth/AdminSignUp";
 import AdminFooter from "../AdminCommon/AdminFooter";
 import AdminHeader from "../AdminCommon/AdminHeader";
+import ListOfAdmin from "../ListOfAdmin/ListOfAdmin";
 import AdminPrivateRoute from "./AdminPrivateRoute";
 
 const AdminRouter = () => {
@@ -13,6 +14,7 @@ const AdminRouter = () => {
       <Router>
         <AdminHeader />
         <Switch>
+          <AdminPrivateRoute path="/admin/list" component={ListOfAdmin} />
           <AdminPrivateRoute path="/admin/sign-up" component={AdminSignUp} />
           <AdminPrivateRoute path="/admin/dashboard" component={Admin} />
           <Route path="/admin/sign-in" component={AdminSignIn} />

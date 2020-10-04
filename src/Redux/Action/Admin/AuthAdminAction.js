@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../../../Component/SetAuth/setAuthToken";
-import { CURRENT_ADMIN } from "../Type";
+import { CURRENT_ADMIN, LIST_ADMIN } from "../Type";
 
 // Admin Sign Up
 export const FuncAdminSignUp = (AdminSignUpData, history) => (dispatch) => {
@@ -45,4 +45,17 @@ export const adminLogout = () => (dispatch) => {
   localStorage.removeItem("jwtAdminToken");
   setAuthToken(false);
   dispatch(setCurrentAdmin(false));
+};
+
+// List Of Admin
+export const AdminList = () => (dispatch) => {
+  axios
+    .get("http://localhost:5000/api/admin/list")
+    .then((res) =>
+      dispatch({
+        type: LIST_ADMIN,
+        payload: res.data,
+      })
+    )
+    .catch((err) => console.log(err));
 };
