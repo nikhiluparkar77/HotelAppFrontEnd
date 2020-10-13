@@ -17,8 +17,7 @@ export default function (state = initalState, action) {
     case LIST_ADMIN:
       return {
         ...state,
-        isAdmnAuthenticated: action.payload,
-        admin: action.payload,
+        listOfAdmin: action.payload,
       };
     default:
       return state;

@@ -59,3 +59,16 @@ export const AdminList = () => (dispatch) => {
     )
     .catch((err) => console.log(err));
 };
+
+// Delete Admin
+export const AdminDelete = (id) => (dispatch) => {
+  axios
+    .delete(`http://localhost:5000/api/admin/${id}`)
+    .then((res) =>
+      dispatch({
+        type: LIST_ADMIN,
+        payload: res.data,
+      })
+    )
+    .catch((err) => console.log(err));
+};
