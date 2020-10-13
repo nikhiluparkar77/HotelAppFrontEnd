@@ -79,7 +79,9 @@ AdminSignUp.propTypes = {
   FuncAdminSignUp: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  adminAuth: state.adminAuth,
+});
 
 const mapDispatchToProps = {
   FuncAdminSignUp,

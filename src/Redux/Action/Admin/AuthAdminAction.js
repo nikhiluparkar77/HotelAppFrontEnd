@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../../../Component/SetAuth/setAuthToken";
-import { CURRENT_ADMIN, LIST_ADMIN } from "../Type";
+import { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN } from "../Type";
 
 // Admin Sign Up
 export const FuncAdminSignUp = (AdminSignUpData, history) => (dispatch) => {
@@ -61,14 +61,16 @@ export const AdminList = () => (dispatch) => {
 };
 
 // Delete Admin
-export const AdminDelete = (id) => (dispatch) => {
+export const AdminDelete = (id, history) => (dispatch) => {
   axios
-    .delete(`http://localhost:5000/api/admin/${id}`)
-    .then((res) =>
-      dispatch({
-        type: LIST_ADMIN,
-        payload: res.data,
-      })
+    .delete(`http://localhost:5000/api/admin/deleteAdmin/${id}`)
+    .then(
+      (res) =>
+        dispatch({
+          type: DELETE_ADMIN,
+          payload: res.data,
+        }),
+      history.push("/admin/dashboard")
     )
     .catch((err) => console.log(err));
 };

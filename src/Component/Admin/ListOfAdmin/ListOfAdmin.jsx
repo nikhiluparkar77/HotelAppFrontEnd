@@ -8,7 +8,7 @@ import {
 } from "../../../Redux/Action/Admin/AuthAdminAction";
 import Button from "../../Comman/Feilds/Button";
 
-const ListOfAdmin = ({ adminAuth, AdminList, AdminDelete }) => {
+const ListOfAdmin = ({ adminAuth, AdminList, AdminDelete, customprops }) => {
   const [ListAdmin, SetListAdmin] = useState([]);
 
   useEffect(() => {
@@ -20,12 +20,15 @@ const ListOfAdmin = ({ adminAuth, AdminList, AdminDelete }) => {
   }, [adminAuth.listOfAdmin]);
 
   const HandleDelete = (id) => {
-    AdminDelete(id);
-    SetListAdmin(adminAuth.listOfAdmin);
+    AdminDelete(id, customprops.history);
   };
 
+  // useEffect(() => {
+  //   SetListAdmin(adminAuth.listOfAdmin);
+  // }, []);
+
   let AdminData;
-  if (ListAdmin.length == 0) {
+  if (ListAdmin == undefined) {
     AdminData = <h4>No Admin Avilable</h4>;
   } else {
     AdminData = (
