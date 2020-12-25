@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "./Home/Slider/Slider";
-import Filter from "./Home/Filter/Filter";
 import AboutHotel from "./Home/AboutHotel/AboutHotel";
 import ServicesPart from "./Home/ServicesPart/ServicesPart";
 import DiscoveryPart from "./Home/DiscoveryPart/DiscoveryPart";

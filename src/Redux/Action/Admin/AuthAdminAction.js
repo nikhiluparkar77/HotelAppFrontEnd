@@ -74,3 +74,4 @@ export const AdminDelete = (id, history) => (dispatch) => {
     )
     .catch((err) => console.log(err));
 };
+

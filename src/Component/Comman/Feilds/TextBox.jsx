@@ -4,7 +4,7 @@ const TextBox = ( { type, label, value, name, onChange } ) => {
     return (
         <div className="form-group">
             <label className="label">{ label }</label>
-            <input type={ type } value={ value } name={ name } onChange={ onChange } className="form-control" />
+            <input type={ type } value={ value } name={ name } onChange={ onChange } className="form-control" required />
 
         </div>
     );

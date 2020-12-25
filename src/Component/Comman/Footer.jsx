@@ -41,13 +41,13 @@ const Footer = () => {
               </div>
               <div className="col-lg-6">
                 <h6>Helpline</h6>
-                <Link className="text-white text-decoration-none">
+                <span className="text-white text-decoration-none">
                   Email:- hotel@app.com
-                </Link>
+                </span>
                 <br />
-                <Link className="text-white text-decoration-none">
+                <span className="text-white text-decoration-none">
                   Phone:- +91 98765 43210
-                </Link>
+                </span>
                 <br />
                 <Link
                   to="/contact/#mapBlock"

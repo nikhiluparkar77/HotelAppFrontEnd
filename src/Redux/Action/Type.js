@@ -4,3 +4,5 @@ export const CURRENT_USER = "CURRENT_USER";
 export const CURRENT_ADMIN = "CURRENT_ADMIN";
 export const LIST_ADMIN = "LIST_ADMIN";
 export const DELETE_ADMIN = "DELETE_ADMIN";
+
+export const CONTACT_US = "CONTACT_US"

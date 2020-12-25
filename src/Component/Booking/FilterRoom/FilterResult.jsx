@@ -11,7 +11,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B1 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -22,7 +22,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B2 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -41,7 +41,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B1 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -60,7 +60,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B2 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -79,7 +79,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B1 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -98,7 +98,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B2 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -117,7 +117,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B1 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -136,7 +136,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -144,7 +144,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B2 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -155,7 +155,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -163,7 +163,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B1 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -174,7 +174,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -182,7 +182,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B2 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -193,7 +193,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -201,7 +201,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B1 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -212,7 +212,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -220,7 +220,7 @@ const FilterResult = () => {
                     <div className="card">
                         <img className="card-img-top" src={ B2 } alt="Card image" />
                         <div className="card-body">
-                            <Link className="SellingLink">
+                            <div className="SellingLink">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <h5 className="card-title">Rooms Details</h5>
@@ -231,7 +231,7 @@ const FilterResult = () => {
                                         <h5 className="card-title">200$</h5>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

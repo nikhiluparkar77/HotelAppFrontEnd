@@ -11,9 +11,9 @@ const FilterRoom = () => {
                 <div className="Filter BGColor pl-4 pr-4">
                     <div className="row">
                         <div className="col-lg-3">
-                            <div class="form-group">
-                                <label for="sel1">Purpose</label>
-                                <select class="form-control" id="sel1">
+                            <div className="form-group">
+                                <label htmlFor="sel1">Purpose</label>
+                                <select className="form-control" id="sel1">
                                     <option>-select purpose-</option>
                                     <option>Personal</option>
                                     <option>Family</option>
@@ -23,9 +23,9 @@ const FilterRoom = () => {
                             </div>
                         </div>
                         <div className="col-lg-3">
-                            <div class="form-group">
-                                <label for="sel1">Numbar of rooms</label>
-                                <select class="form-control" id="sel1">
+                            <div className="form-group">
+                                <label htmlFor="sel1">Numbar of rooms</label>
+                                <select className="form-control" id="sel1">
                                     <option>-select no. rooms-</option>
                                     <option>1</option>
                                     <option>2</option>
@@ -42,7 +42,7 @@ const FilterRoom = () => {
                             <TextBox label="Date" type="date" />
                         </div>
                         <div className="col-lg-3">
-                            <div class="form-group">
+                            <div className="form-group">
                                 <div className="BookBtn">
                                     <Button value="Search Result" />
                                 </div>

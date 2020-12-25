@@ -32,8 +32,8 @@ const SericesInfo = () => {
                 </div>
                 <div className="pt-4">
 
-                    <div class="tab-content">
-                        <div id="ItalianFood" class="container tab-pane active">
+                    <div className="tab-content">
+                        <div id="ItalianFood" className="container tab-pane active">
                             <div className="row">
                                 <div className="col-lg-6">
                                     <img src={ img4 } className="img-fluid" />
@@ -52,7 +52,7 @@ const SericesInfo = () => {
                                 </div>
                             </div>
                         </div>
-                        <div id="SpaComplex" class="container tab-pane fade">
+                        <div id="SpaComplex" className="container tab-pane fade">
                             <div className="row">
                                 <div className="col-lg-6">
                                     <img src={ img4 } className="img-fluid" />
@@ -71,7 +71,26 @@ const SericesInfo = () => {
                                 </div>
                             </div>
                         </div>
-                        <div id="OutdoorRestaurant" class="container tab-pane fade">
+                        <div id="OutdoorRestaurant" className="container tab-pane fade">
+                            <div className="row">
+                                <div className="col-lg-6">
+                                    <img src={ img4 } className="img-fluid" />
+                                </div>
+                                <div className="col-lg-6">
+
+                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
+                                    <p className="WorkingHour"> Working Hours </p>
+                                    <div className="BookingService">
+                                        <p className="service"><b>Breakfast:</b> 7am to 10am <button type="button" className="btn btn-outline-dark btn-sm float-right">Book Now</button></p>
+                                        <p className="service"><b>Lunch:</b> 12pm to 2pm  <button type="button" className="btn btn-outline-dark btn-sm float-right">Book Now</button></p>
+                                        <p className="service"><b>Dinner:</b> 8pm to 11pm  <button type="button" className="btn btn-outline-dark btn-sm float-right">Book Now</button></p>
+                                        <p className="service"><b>Evening Bar:</b> 10pm to 2am <button type="button" className="btn btn-outline-dark btn-sm float-right">Book Now</button> </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="PoolsideBar" className="container tab-pane fade">
                             <div className="row">
                                 <div className="col-lg-6">
                                     <img src={ img4 } className="img-fluid" />
@@ -90,26 +109,7 @@ const SericesInfo = () => {
                                 </div>
                             </div>
                         </div>
-                        <div id="PoolsideBar" class="container tab-pane fade">
-                            <div className="row">
-                                <div className="col-lg-6">
-                                    <img src={ img4 } className="img-fluid" />
-                                </div>
-                                <div className="col-lg-6">
-
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-                                    <p className="WorkingHour"> Working Hours </p>
-                                    <div className="BookingService">
-                                        <p className="service"><b>Breakfast:</b> 7am to 10am <button type="button" class="btn btn-outline-dark btn-sm float-right">Book Now</button></p>
-                                        <p className="service"><b>Lunch:</b> 12pm to 2pm  <button type="button" class="btn btn-outline-dark btn-sm float-right">Book Now</button></p>
-                                        <p className="service"><b>Dinner:</b> 8pm to 11pm  <button type="button" class="btn btn-outline-dark btn-sm float-right">Book Now</button></p>
-                                        <p className="service"><b>Evening Bar:</b> 10pm to 2am <button type="button" class="btn btn-outline-dark btn-sm float-right">Book Now</button> </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div id="ChildrenPlayground" class="container tab-pane fade">
+                        <div id="ChildrenPlayground" className="container tab-pane fade">
                             <div className="row">
                                 <div className="col-lg-6">
                                     <img src={ img4 } className="img-fluid" />
