@@ -5,8 +5,10 @@ import AdminSignIn from "../AdminAuth/AdminSignIn";
 import AdminSignUp from "../AdminAuth/AdminSignUp";
 import AdminFooter from "../AdminCommon/AdminFooter";
 import AdminHeader from "../AdminCommon/AdminHeader";
+import ListOfMessage from "../Contact/ListOfMessage";
 import ListOfAdmin from "../ListOfAdmin/ListOfAdmin";
 import AdminPrivateRoute from "./AdminPrivateRoute";
+ 
 
 const AdminRouter = () => {
   return (
@@ -14,9 +16,10 @@ const AdminRouter = () => {
       <Router>
         <AdminHeader />
         <Switch>
+          <AdminPrivateRoute path="/admin/message-list" component={ListOfMessage} />
           <AdminPrivateRoute path="/admin/list" component={ListOfAdmin} />
-          <AdminPrivateRoute path="/admin/sign-up" component={AdminSignUp} />
           <AdminPrivateRoute path="/admin/dashboard" component={Admin} />
+          <AdminPrivateRoute path="/admin/sign-up" component={AdminSignUp} /> 
           <Route path="/admin/sign-in" component={AdminSignIn} />
           <Route path="/admin" component={AdminSignIn} />
         </Switch>

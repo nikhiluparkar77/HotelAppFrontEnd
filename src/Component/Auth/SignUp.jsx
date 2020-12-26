@@ -70,3 +70,10 @@ const mapDispatchToProps = {
 
 
 export default connect( null, mapDispatchToProps )( SignUp );
+
+
+
+
+
+
+

@@ -10,25 +10,7 @@ const AdminHeader = ({ adminAuth, adminLogout }) => {
   };
 
   const AdminLink = (
-    <>
-      <li className="nav-item dropdown">
-        <a
-          className="nav-link dropdown-toggle"
-          href="#"
-          id="navbardrop"
-          data-toggle="dropdown"
-        >
-          Admin
-        </a>
-        <div className="dropdown-menu">
-          <Link className="dropdown-item" to="/admin/sign-up">
-            Add New
-          </Link>
-          <Link className="dropdown-item" to="/admin/list">
-            List
-          </Link>
-        </div>
-      </li>
+    <> 
       <li className="nav-item dropdown">
         <a
           className="nav-link dropdown-toggle"
@@ -46,6 +28,12 @@ const AdminHeader = ({ adminAuth, adminLogout }) => {
           {adminAuth.isAdmnAuthenticated.name}
         </a>
         <div className="dropdown-menu">
+        <Link className="dropdown-item" to="/admin/sign-up">
+            Add New
+          </Link>
+          <Link className="dropdown-item" to="/admin/list">
+            List
+          </Link>
           <Link className="dropdown-item" to="#" onClick={LogoutAdmin}>
             Logout
           </Link>
@@ -58,7 +46,7 @@ const AdminHeader = ({ adminAuth, adminLogout }) => {
     <div className="AdminHeader Header">
       <nav className="navbar navbar-dark bg-white navbar-expand-sm">
         <div className="container">
-          <Link className="navbar-brand" to="/admin">
+          <Link className="navbar-brand" to="/admin/dashboard">
             Admin Panel
           </Link>
           <button

@@ -28,7 +28,7 @@ const ListOfAdmin = ({ adminAuth, AdminList, AdminDelete, customprops }) => {
   // }, []);
 
   let AdminData;
-  if (ListAdmin == undefined) {
+  if (ListAdmin.length == undefined) {
     AdminData = <h4>No Admin Avilable</h4>;
   } else {
     AdminData = (

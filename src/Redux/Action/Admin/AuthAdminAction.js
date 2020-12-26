@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../../../Component/SetAuth/setAuthToken";
-import { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN } from "../Type";
+import { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN, BOOKING_ROOMS } from "../Type";
 
 // Admin Sign Up
 export const FuncAdminSignUp = (AdminSignUpData, history) => (dispatch) => {
@@ -13,7 +13,7 @@ export const FuncAdminSignUp = (AdminSignUpData, history) => (dispatch) => {
           type: CURRENT_ADMIN,
           payload: res.data,
         }),
-      history.push("/dashboard")
+      history.push("/admin/list")
     )
     .catch((err) => console.log(err));
 };
@@ -28,6 +28,7 @@ export const FuncAdminSignIn = (AdminSignInData, history) => (dispatch) => {
       setAuthToken(token);
       const decoded = jwt_decode(token);
       dispatch(setCurrentAdmin(decoded));
+      history.push("/admin/dashboard")
     })
     .catch((err) => console.log(err));
 };
@@ -75,3 +76,14 @@ export const AdminDelete = (id, history) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
+export const BookingRoomsFunc = () => (dispatch) =>{
+  axios
+    .get("http://localhost:5000/api/bookingHotel")
+    .then((res)=>
+      dispatch({
+        type:BOOKING_ROOMS,
+        payload:res.data
+    })
+    )
+    .catch((err)=> console.log(err))
+}

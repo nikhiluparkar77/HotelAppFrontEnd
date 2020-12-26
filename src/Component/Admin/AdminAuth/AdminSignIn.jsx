@@ -13,6 +13,13 @@ const AdminSignIn = ({ FuncAdminSignIn, adminAuth }) => {
     password: "",
   });
 
+
+  useEffect(() => {
+    if (adminAuth.isAdmnAuthenticated) {
+      history.push("/admin/dashboard");
+    }
+  }, []);
+
   const OnSubimit = (e) => {
     e.preventDefault();
     const AdminSignInData = {
@@ -29,11 +36,7 @@ const AdminSignIn = ({ FuncAdminSignIn, adminAuth }) => {
     });
   };
 
-  useEffect(() => {
-    if (adminAuth.isAdmnAuthenticated) {
-      history.push("/admin/dashboard");
-    }
-  }, []);
+ 
 
   return (
     <div className="SignIn SignClass">

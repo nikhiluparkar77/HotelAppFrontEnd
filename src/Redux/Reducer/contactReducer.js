@@ -1,7 +1,8 @@
-import {CONTACT_US} from "../Action/Type";
+import {CONTACT_US,CONTACT_MESSAGE} from "../Action/Type";
 
 const initalState = {
-    contact:{}
+    contact:{},
+    getMessage:{}
 }
 
 export default function(state = initalState, action){
@@ -10,6 +11,11 @@ export default function(state = initalState, action){
             return{
                 ...state,
                 contact:action.payload
+            }
+            case CONTACT_MESSAGE:
+            return{
+                ...state,
+                getMessage:action.payload
             }
             default:
                 return state

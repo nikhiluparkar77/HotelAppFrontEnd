@@ -1,9 +1,12 @@
-const { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN } = require("../Action/Type");
+import { BOOKING_ROOMS } from "../Action/Type";
+
+const { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN} = require("../Action/Type");
 
 const initalState = {
   isAdmnAuthenticated: false,
   admin: {},
   listOfAdmin: [],
+  BookingRooms:{}
 };
 
 export default function (state = initalState, action) {
@@ -24,6 +27,11 @@ export default function (state = initalState, action) {
         ...state,
         listOfAdmin: action.payload,
       };
+      case BOOKING_ROOMS:
+       return {
+          ...state,
+          BookingRooms: action.payload,
+        };
     default:
       return state;
   }
