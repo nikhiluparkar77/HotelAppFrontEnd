@@ -10,3 +10,5 @@ export const CONTACT_MESSAGE = "CONTACT_MESSAGE";
 
 // Booking Rooms
 export const BOOKING_ROOMS = "BOOKING_ROOMS";
+export const SINGLE_BOOKING_ROOMS = "SINGLE_BOOKING_ROOMS";
+ 

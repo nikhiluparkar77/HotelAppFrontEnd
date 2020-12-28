@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Moment from "react-moment";
 import { BookingRoomsFunc, DeleteBookFunc } from '../../../Redux/Action/Admin/AuthAdminAction';
 import Button from '../../Comman/Feilds/Button';
+import { Link } from 'react-router-dom';
 
 const GetBooking = ({BookingRoomsFunc,DeleteBookFunc,adminAuth}) => {
     
@@ -22,16 +23,14 @@ const GetBooking = ({BookingRoomsFunc,DeleteBookFunc,adminAuth}) => {
         SetBooking(adminAuth.BookingRooms);
     }
    
-    const EditRoomInfo = (id) => {
-        console.log(id);
-    }
+     
     useEffect(()=>{
         SetBooking(adminAuth.BookingRooms)
     },[adminAuth.BookingRooms]);
 
     let BookingData;
     if(Booking.length == undefined){
-        BookingData = <h4>No Rooms Avilable</h4>
+        BookingData = (<><tr><td>No Rooms Avilable</td></tr></>)
     }else{
         BookingData = (
             <>
@@ -45,7 +44,7 @@ const GetBooking = ({BookingRoomsFunc,DeleteBookFunc,adminAuth}) => {
                     <td><Moment format="DD/MM/YYYY">{item.RoomeDate}</Moment> </td>
                     <td>{item.RoomeAvilable}</td>
                     <td className="BookingBtn">
-                        <Button value="Edit" onclick={(e)=>EditRoomInfo(item._id)}  /><Button value="Delete" onclick={(e)=>DateleEditRoomInfo(item._id)} />
+                        <Link to={`/admin/booking/${item._id}`}><Button value="Edit" /></Link> <Button value="Delete" onclick={(e)=>DateleEditRoomInfo(item._id)} />
                     </td>
                      
                   </tr>
@@ -58,7 +57,7 @@ const GetBooking = ({BookingRoomsFunc,DeleteBookFunc,adminAuth}) => {
     return (
         <div className="container">
             <div className="AdminComman">
-                <h4>Booking Hoterl Info</h4>
+                <h4>Booking Hotel Info</h4>
                 <hr />
             
                     <table className="table table-bordered">

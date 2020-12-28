@@ -9,8 +9,16 @@ const Admin = () => {
       <div className="AdminComman">
       <h1>Dashboard</h1>
       <hr />
-      <Link to="/admin/message-list"><Button value="Contact Message" /></Link>
-      <Link to="/admin/booking"><Button value="Booking Info" /></Link>
+      <div className="row">
+        <div className="col-lg-3">
+        <Link to="/admin/message-list"><Button value="Contact Message" /></Link>
+        </div>
+        <div className="col-lg-3">
+        <Link to="/admin/booking"><Button value="Booking Info" /></Link>
+        </div>
+      </div>
+      
+     
       </div>
     </div>
   );

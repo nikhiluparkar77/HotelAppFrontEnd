@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../../../Component/SetAuth/setAuthToken";
-import { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN, BOOKING_ROOMS } from "../Type";
+import { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN, BOOKING_ROOMS, SINGLE_BOOKING_ROOMS } from "../Type";
 
 // Admin Sign Up
 export const FuncAdminSignUp = (AdminSignUpData, history) => (dispatch) => {
@@ -76,6 +76,7 @@ export const AdminDelete = (id, history) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
+// Get All Booking info
 export const BookingRoomsFunc = () => (dispatch) =>{
   axios
     .get("http://localhost:5000/api/bookingHotel")
@@ -88,6 +89,33 @@ export const BookingRoomsFunc = () => (dispatch) =>{
     .catch((err)=> console.log(err))
 }
 
+// Get Single Booking info
+export const SingleRoomsFunc = (id) => (dispatch) =>{
+  axios
+    .get(`http://localhost:5000/api/bookingHotel/${id}`)
+    .then((res)=>
+      dispatch({
+        type:SINGLE_BOOKING_ROOMS,
+        payload:res.data
+    })     
+    )
+    .catch((err)=> console.log(err))
+}
+
+
+// Edit Single Booking info
+export const EditBookingFunc = (id, BookingEditData,history) => (dispatch) => {
+  axios
+    .patch(`http://localhost:5000/api/bookingHotel/${id}`, BookingEditData)
+    .then((res)=>dispatch({
+      type:SINGLE_BOOKING_ROOMS,
+      payload:res.data
+    }),
+      history.push(`/admin/booking/${id}`)
+    ).catch((err) => console.log(err))
+}
+
+// Delete Single Booking info
 export const DeleteBookFunc = (id) => (dispatch) =>{ 
   axios
     .delete(`http://localhost:5000/api/bookingHotel/${id}`)
