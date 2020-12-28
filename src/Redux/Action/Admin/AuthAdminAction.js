@@ -87,3 +87,13 @@ export const BookingRoomsFunc = () => (dispatch) =>{
     )
     .catch((err)=> console.log(err))
 }
+
+export const DeleteBookFunc = (id) => (dispatch) =>{ 
+  axios
+    .delete(`http://localhost:5000/api/bookingHotel/${id}`)
+    .then((res)=>dispatch({
+        type:BOOKING_ROOMS,
+        payload:res.data 
+    }))
+    .catch((err) => console.log(err))
+}

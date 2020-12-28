@@ -5,6 +5,7 @@ import AdminSignIn from "../AdminAuth/AdminSignIn";
 import AdminSignUp from "../AdminAuth/AdminSignUp";
 import AdminFooter from "../AdminCommon/AdminFooter";
 import AdminHeader from "../AdminCommon/AdminHeader";
+import GetBooking from "../BookingHotel/GetBooking";
 import ListOfMessage from "../Contact/ListOfMessage";
 import ListOfAdmin from "../ListOfAdmin/ListOfAdmin";
 import AdminPrivateRoute from "./AdminPrivateRoute";
@@ -16,6 +17,7 @@ const AdminRouter = () => {
       <Router>
         <AdminHeader />
         <Switch>
+        <AdminPrivateRoute path="/admin/booking" component={GetBooking} />
           <AdminPrivateRoute path="/admin/message-list" component={ListOfMessage} />
           <AdminPrivateRoute path="/admin/list" component={ListOfAdmin} />
           <AdminPrivateRoute path="/admin/dashboard" component={Admin} />
