@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../../../Component/SetAuth/setAuthToken";
-import { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN, BOOKING_ROOMS, SINGLE_BOOKING_ROOMS } from "../Type";
+import { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN, BOOKING_ROOMS, SINGLE_BOOKING_ROOMS, ADD_BOOKING_ROOMS } from "../Type";
 
 // Admin Sign Up
 export const FuncAdminSignUp = (AdminSignUpData, history) => (dispatch) => {
@@ -75,6 +75,20 @@ export const AdminDelete = (id, history) => (dispatch) => {
     )
     .catch((err) => console.log(err));
 };
+
+// Add Booking info
+export const AddBookingFunc = (BookingData,history) => (dispatch) =>{
+  
+  axios
+    .post("http://localhost:5000/api/bookingHotel",BookingData)
+    .then((res)=>dispatch({
+        type:ADD_BOOKING_ROOMS,
+        payload:res.data
+    }),
+    history.push("/admin/booking")
+    )
+    .catch((err)=> console.log(err));
+}
 
 // Get All Booking info
 export const BookingRoomsFunc = () => (dispatch) =>{

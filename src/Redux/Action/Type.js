@@ -9,6 +9,7 @@ export const CONTACT_US = "CONTACT_US";
 export const CONTACT_MESSAGE = "CONTACT_MESSAGE";
 
 // Booking Rooms
+export const ADD_BOOKING_ROOMS = "ADD_BOOKING_ROOMS";
 export const BOOKING_ROOMS = "BOOKING_ROOMS";
 export const SINGLE_BOOKING_ROOMS = "SINGLE_BOOKING_ROOMS";
  

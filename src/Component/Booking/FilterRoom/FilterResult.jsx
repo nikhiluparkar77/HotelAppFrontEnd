@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 import Button from '../../Comman/Feilds/Button';
 import Moment from "react-moment";
 import { BookingRoomsFunc } from '../../../Redux/Action/Admin/AuthAdminAction';
-import B1 from "../../../Image/B1.jpg";
-import B2 from "../../../Image/B2.jpg";
+ 
 
 
 const FilterResult = ({BookingRoomsFunc,adminAuth}) => {

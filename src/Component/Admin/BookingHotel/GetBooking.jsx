@@ -57,7 +57,15 @@ const GetBooking = ({BookingRoomsFunc,DeleteBookFunc,adminAuth}) => {
     return (
         <div className="container">
             <div className="AdminComman">
-                <h4>Booking Hotel Info</h4>
+                <div className="row">
+                    <div className="col-lg-6">
+                        <h4>Booking Hotel Info</h4>
+                    </div>
+                    <div className="col-lg-6">
+                        <Link to="/admin/add-booking" className="text-right"><Button value="Add Booking Info" /></Link>
+                    </div>
+                </div>
+                 
                 <hr />
             
                     <table className="table table-bordered">
