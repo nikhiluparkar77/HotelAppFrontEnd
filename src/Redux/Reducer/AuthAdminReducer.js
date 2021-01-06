@@ -9,6 +9,7 @@ const initalState = {
   AddBooking:{},
   BookingRooms:{},
   SingleBookingRooms:{},
+  
 };
 
 export default function (state = initalState, action) {

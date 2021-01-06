@@ -23,10 +23,7 @@ const ListOfAdmin = ({ adminAuth, AdminList, AdminDelete, customprops }) => {
     AdminDelete(id, customprops.history);
   };
 
-  // useEffect(() => {
-  //   SetListAdmin(adminAuth.listOfAdmin);
-  // }, []);
-
+ 
   let AdminData;
   if (ListAdmin.length == undefined) {
     AdminData = <h4>No Admin Avilable</h4>;

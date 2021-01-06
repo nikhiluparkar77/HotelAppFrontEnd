@@ -12,4 +12,7 @@ export const CONTACT_MESSAGE = "CONTACT_MESSAGE";
 export const ADD_BOOKING_ROOMS = "ADD_BOOKING_ROOMS";
 export const BOOKING_ROOMS = "BOOKING_ROOMS";
 export const SINGLE_BOOKING_ROOMS = "SINGLE_BOOKING_ROOMS";
+
+// Slider 
+export const GET_SLIDER = "GET_SLIDER";
  

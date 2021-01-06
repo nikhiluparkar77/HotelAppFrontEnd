@@ -10,6 +10,7 @@ import EditBooking from "../BookingHotel/EditBooking";
 import GetBooking from "../BookingHotel/GetBooking";
 import ListOfMessage from "../Contact/ListOfMessage";
 import ListOfAdmin from "../ListOfAdmin/ListOfAdmin";
+import GetSlider from "../Slider/GetSlider";
 import AdminPrivateRoute from "./AdminPrivateRoute";
  
 
@@ -19,6 +20,7 @@ const AdminRouter = () => {
       <Router>
         <AdminHeader />
         <Switch>
+          <AdminPrivateRoute path="/admin/slider" component={GetSlider} /> 
           <AdminPrivateRoute path="/admin/add-booking" component={AddBooking} /> 
           <AdminPrivateRoute path="/admin/booking/:bookingId" component={EditBooking} />  
           <AdminPrivateRoute path="/admin/booking" component={GetBooking} />

@@ -195,10 +195,16 @@ body {
 .AdminComman {
   margin: 40px 0px;
 }
-.BookingImage {
+.BookingImage,
+.commanImage {
   width: 70px;
 }
-.BookingBtn button {
+.BookingBtn button,
+.commanBtn button {
   float: left;
   margin-right: 5px;
+}
+
+.commanBtn div {
+  float: left;
 }
