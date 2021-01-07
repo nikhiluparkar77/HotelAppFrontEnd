@@ -2,10 +2,10 @@ import React,{useEffect,useState} from 'react';
 import {connect} from "react-redux";
 import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
-import { getSliderFunc } from '../../../Redux/Action/Slider';
+import { getSliderFunc,deleteSliderFunc } from '../../../Redux/Action/Slider';
 import Button from '../../Comman/Feilds/Button';
 
-const GetSlider = ({getSliderFunc,slider}) => {
+const GetSlider = ({getSliderFunc,deleteSliderFunc,slider,customprops}) => {
     
     const [SliderState,SetSliderState] = useState([]); 
 
@@ -16,6 +16,12 @@ const GetSlider = ({getSliderFunc,slider}) => {
     useEffect(()=>{
       SetSliderState(slider.getSlider);
     },[slider.getSlider]);
+
+
+    const DeleteSlider = (id) => {
+      const history = customprops.history;
+      deleteSliderFunc(id,history);
+    }
 
     let SliderData ;
     if(SliderState.length === undefined){
@@ -34,9 +40,7 @@ const GetSlider = ({getSliderFunc,slider}) => {
                   /></td>
                   <td>{item.sliderHead}</td>
                   <td>{item.sliderInfo}</td>
-                  <td className="commanBtn"><Link to={`/admin/booking/${item._id}`}><Button value="Edit" /></Link>  <Button value="Delete" /></td>
-
-
+                  <td className="commanBtn"><Link to={`/admin/slider/${item._id}`}><Button value="Edit" /></Link>  <Button value="Delete" onclick={(e)=>DeleteSlider(item._id)} /></td> 
               </tr>
             
             ))
@@ -50,6 +54,15 @@ const GetSlider = ({getSliderFunc,slider}) => {
     return (
         <div className="AdminList commanBlock">
             <div className="container">
+            <div className="row">
+                    <div className="col-lg-6">
+                        <h4>Slider Info</h4>
+                    </div>
+                    <div className="col-lg-6">
+                        <Link to="/admin/add-slider" className="text-right"><Button value="Add Slider" /></Link>
+                    </div>
+                </div>
+                <hr />
                 <table className="table table-bordered">
                     <thead>
                     <tr>
@@ -71,7 +84,8 @@ const GetSlider = ({getSliderFunc,slider}) => {
 
 GetSlider.propTypes = {
     getSliderFunc:PropTypes.func.isRequired,
-    slider:PropTypes.object.isRequired
+    slider:PropTypes.object.isRequired,
+    deleteSliderFunc:PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
@@ -79,7 +93,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-    getSliderFunc
+    getSliderFunc,
+    deleteSliderFunc
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GetSlider);

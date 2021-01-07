@@ -1,4 +1,4 @@
-import { BOOKING_ROOMS,SINGLE_BOOKING_ROOMS,ADD_BOOKING_ROOMS } from "../Action/Type";
+import { BOOKING_ROOMS,SINGLE_BOOKING_ROOMS,ADD_BOOKING_ROOMS, TABLE_BOOKING,EDIT_TABLE_BOOKING,SINGLE_TABLE_BOOKING, ADD_TABLE_BOOKING } from "../Action/Type";
 
 const { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN} = require("../Action/Type");
 
@@ -9,6 +9,10 @@ const initalState = {
   AddBooking:{},
   BookingRooms:{},
   SingleBookingRooms:{},
+  tableBooking:{},
+  singleTable:{},
+  editTableBooking:{},
+   addTableBooking:{}
   
 };
 
@@ -45,6 +49,26 @@ export default function (state = initalState, action) {
              ...state,
              SingleBookingRooms: action.payload,
            };
+           case TABLE_BOOKING:
+          return {
+             ...state,
+             tableBooking: action.payload,
+           };
+           case SINGLE_TABLE_BOOKING:
+            return {
+               ...state,
+               singleTable: action.payload,
+             };
+           case EDIT_TABLE_BOOKING:
+            return {
+               ...state,
+               editTableBooking: action.payload,
+             };
+             case ADD_TABLE_BOOKING:
+              return {
+                 ...state,
+                 addTableBooking: action.payload,
+               };
         default:
         return state;
   }

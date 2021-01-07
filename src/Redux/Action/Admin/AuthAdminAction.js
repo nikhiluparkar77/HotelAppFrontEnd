@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../../../Component/SetAuth/setAuthToken";
-import { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN, BOOKING_ROOMS, SINGLE_BOOKING_ROOMS, ADD_BOOKING_ROOMS } from "../Type";
+import { CURRENT_ADMIN, LIST_ADMIN, DELETE_ADMIN, BOOKING_ROOMS, SINGLE_BOOKING_ROOMS, ADD_BOOKING_ROOMS, TABLE_BOOKING,EDIT_TABLE_BOOKING, SINGLE_TABLE_BOOKING, ADD_TABLE_BOOKING } from "../Type";
 
 // Admin Sign Up
 export const FuncAdminSignUp = (AdminSignUpData, history) => (dispatch) => {
@@ -139,3 +139,47 @@ export const DeleteBookFunc = (id) => (dispatch) =>{
     }))
     .catch((err) => console.log(err))
 }
+
+export const GetTableFunc = () => (dispatch) => {
+  axios
+    .get("http://localhost:5000/api/tableBook")
+    .then((res)=> dispatch({
+      type:TABLE_BOOKING,
+      payload:res.data
+    }))
+    .catch((err) => console.log(err))
+}
+
+export const GetSingleTableFunc = (id) => (dispatch) => {
+  axios
+    .get(`http://localhost:5000/api/tableBook/${id}`)
+    .then((res)=> dispatch({
+      type:SINGLE_TABLE_BOOKING,
+      payload:res.data
+    }))
+    .catch((err) => console.log(err))
+}
+
+export const EditTableFunc = (id,TableEditData,history) => (dispatch) => {
+  axios
+    .patch(`http://localhost:5000/api/tableBook/${id}`, TableEditData)
+    .then((res)=> dispatch({
+      type:EDIT_TABLE_BOOKING,
+      payload:res.data
+    }),
+    history.push("/admin/dashboard")
+    )
+    .catch((err) => console.log(err))
+}
+
+export const AddTableData = (TableData) => (dispatch) => {
+  axios
+    .post("http://localhost:5000/api/tableBook/",TableData )
+    .then((res)=> dispatch({
+      type:ADD_TABLE_BOOKING,
+      payload:res.data
+    }) 
+    )
+    .catch((err) => console.log(err))
+}
+

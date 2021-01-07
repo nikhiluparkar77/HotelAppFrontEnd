@@ -15,4 +15,13 @@ export const SINGLE_BOOKING_ROOMS = "SINGLE_BOOKING_ROOMS";
 
 // Slider 
 export const GET_SLIDER = "GET_SLIDER";
+export const GET_SINGLE_SLIDER = "GET_SINGLE_SLIDER";
+export const ADD_SLIDER = "ADD_SLIDER";
+
+
+// Table Booking
+export const TABLE_BOOKING = "TABLE_BOOKING";
+export const SINGLE_TABLE_BOOKING = "SINGLE_TABLE_BOOKING";
+export const EDIT_TABLE_BOOKING = "EDIT_TABLE_BOOKING";
+export const ADD_TABLE_BOOKING = "ADD_TABLE_BOOKING";
  
