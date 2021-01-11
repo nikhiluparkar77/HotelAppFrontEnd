@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react';
 import {connect} from "react-redux";
 import { Link } from 'react-router-dom';
 import PropTypes from "prop-types"; 
+import Moment from "react-moment";
 import Button from '../../Comman/Feilds/Button';
 import TextBox from '../../Comman/Feilds/TextBox';
 import { EditTableFunc, GetSingleTableFunc } from '../../../Redux/Action/Admin/AuthAdminAction';
@@ -101,19 +102,19 @@ const EditTableBooking = ({customprops,GetSingleTableFunc,EditTableFunc,adminAut
                                     label="Date"
                                     type="date"
                                     name="date"
-                                    value={StateTable.date} 
+                                    value={<Moment format="DD/MM/YYYY">StateTable.date</Moment>} 
                                     onChange={HandleChange}
                                 />
                             </div>
 
-                            <div className="col-lg-6"> 
-                                <TextBox
-                                    label="Avilable"
-                                    type="text"
-                                    name="booked"
-                                    value={StateTable.booked} 
-                                    onChange={HandleChange}
-                                />
+                            <div className="col-lg-6">  
+                                <label>Avilable</label>
+                                  <select class="form-control" name="booked"  value={StateTable.booked}      onChange={HandleChange} id="sel1">
+                                    <option>-select Avilable-</option>
+                                    <option value="true">Avilable</option>
+                                    <option value="false">Booked</option>
+                                    
+                                 </select>
                             </div>
                         </div>  
 

@@ -140,6 +140,7 @@ export const DeleteBookFunc = (id) => (dispatch) =>{
     .catch((err) => console.log(err))
 }
 
+// Get All Table Booking info
 export const GetTableFunc = () => (dispatch) => {
   axios
     .get("http://localhost:5000/api/tableBook")
@@ -150,6 +151,7 @@ export const GetTableFunc = () => (dispatch) => {
     .catch((err) => console.log(err))
 }
 
+// Get Single Table Booking info
 export const GetSingleTableFunc = (id) => (dispatch) => {
   axios
     .get(`http://localhost:5000/api/tableBook/${id}`)
@@ -160,6 +162,7 @@ export const GetSingleTableFunc = (id) => (dispatch) => {
     .catch((err) => console.log(err))
 }
 
+// Edit Single Table Booking info
 export const EditTableFunc = (id,TableEditData,history) => (dispatch) => {
   axios
     .patch(`http://localhost:5000/api/tableBook/${id}`, TableEditData)
@@ -172,6 +175,7 @@ export const EditTableFunc = (id,TableEditData,history) => (dispatch) => {
     .catch((err) => console.log(err))
 }
 
+// Get Single Table Booking info
 export const AddTableData = (TableData) => (dispatch) => {
   axios
     .post("http://localhost:5000/api/tableBook/",TableData )
@@ -179,6 +183,20 @@ export const AddTableData = (TableData) => (dispatch) => {
       type:ADD_TABLE_BOOKING,
       payload:res.data
     }) 
+    )
+    .catch((err) => console.log(err))
+}
+
+
+export const DeleteTableData = (id,history) => (dispatch) => {
+  
+  axios
+    .delete(`http://localhost:5000/api/tableBook/${id}` )
+    .then((res)=> dispatch({
+      type:SINGLE_TABLE_BOOKING,
+      payload:res.data
+    }),
+    history.push("/admin/dashboard")
     )
     .catch((err) => console.log(err))
 }

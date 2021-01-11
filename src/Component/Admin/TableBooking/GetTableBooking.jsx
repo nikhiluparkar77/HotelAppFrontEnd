@@ -2,10 +2,11 @@ import React,{useEffect,useState} from 'react';
 import {connect} from "react-redux";
 import { Link } from 'react-router-dom';
 import PropTypes from "prop-types"; 
+import Moment from 'react-moment';
 import Button from '../../Comman/Feilds/Button'; 
-import { GetTableFunc } from '../../../Redux/Action/Admin/AuthAdminAction';
+import { DeleteTableData, GetTableFunc } from '../../../Redux/Action/Admin/AuthAdminAction';
 
-const GetTableBooking = ({GetTableFunc,adminAuth,customprops}) => {
+const GetTableBooking = ({GetTableFunc,DeleteTableData,adminAuth,customprops}) => {
  
     const [SetTable,SetSetTable] = useState([]); 
 
@@ -20,8 +21,7 @@ const GetTableBooking = ({GetTableFunc,adminAuth,customprops}) => {
 
       const DeleteBookedTable = (id) => {
         const history = customprops.history;
-        // deleteSliderFunc(id,history);
-        console.log(id)
+        DeleteTableData(id,history);        
       }
  
 
@@ -39,8 +39,8 @@ const GetTableBooking = ({GetTableFunc,adminAuth,customprops}) => {
                   <td>{item.email}</td>
                   <td>{item.mobileNo}</td>
                   <td>{item.tableNo}</td>
-                  <td>{item.date}</td>
-                  <td>{item.booked}</td>
+                  <td><Moment format="DD/MM/YYYY">{item.date}</Moment></td>
+                  <td>{item.booked  === true ? "Avilable" : "Booked"}</td>
                   <td className="commanBtn"><Link to={`/admin/table/${item._id}`}><Button value="Edit" /></Link>  <Button value="Delete" onclick={(e)=>DeleteBookedTable(item._id)} /></td> 
               </tr>
             
@@ -60,7 +60,7 @@ const GetTableBooking = ({GetTableFunc,adminAuth,customprops}) => {
                         <h4>Table Booking Info</h4>
                     </div>
                     <div className="col-lg-6">
-                        <Link to="/admin/add-slider" className="text-right"><Button value="Add Slider" /></Link>
+                        <Link to="/admin/dashboard" className="text-right"><Button value="Dashboard" /></Link>
                     </div>
                 </div>
                 <hr />
@@ -88,7 +88,8 @@ const GetTableBooking = ({GetTableFunc,adminAuth,customprops}) => {
 
 GetTableBooking.propTypes = {
     GetTableFunc:PropTypes.func.isRequired,
-    adminAuth:PropTypes.object.isRequired
+    adminAuth:PropTypes.object.isRequired,
+    DeleteTableData:PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
@@ -96,7 +97,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-    GetTableFunc
+    GetTableFunc,
+    DeleteTableData
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(GetTableBooking);

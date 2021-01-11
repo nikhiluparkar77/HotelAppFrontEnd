@@ -42,7 +42,7 @@ const GetBooking = ({BookingRoomsFunc,DeleteBookFunc,adminAuth}) => {
                     <td>{item.RoomHead}</td>
                     <td>{item.RoomPrice}</td>
                     <td><Moment format="DD/MM/YYYY">{item.RoomeDate}</Moment> </td>
-                    <td>{item.RoomeAvilable}</td>
+                    <td>{item.RoomeAvilable === true ? "Avilable" : "Booked"}</td>
                     <td className="BookingBtn">
                         <Link to={`/admin/booking/${item._id}`}><Button value="Edit" /></Link> <Button value="Delete" onclick={(e)=>DateleEditRoomInfo(item._id)} />
                     </td>

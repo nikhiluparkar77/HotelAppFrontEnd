@@ -19,7 +19,9 @@ const FilterResult = ({BookingRoomsFunc,adminAuth}) => {
         SetBooking(adminAuth.BookingRooms)
     },[adminAuth.BookingRooms]);
 
-     
+     const HandleBookRoom = (id) => {
+         console.log(id)
+     }
 
     let BookingData;
     if(Booking.length == undefined){
@@ -39,7 +41,7 @@ const FilterResult = ({BookingRoomsFunc,adminAuth}) => {
                                             <p>Room No {item.RoomNo}</p>
                                             <h5 className="card-title">{item.RoomHead}</h5>
                                             <p className="date"><Moment format="DD/MM/YYYY">{item.RoomeDate}</Moment> </p>
-                                            <Button value="Book Hotel" />
+                                            <Button value="Book Hotel" onclick={(e)=>HandleBookRoom(item._id)} />
                                         </div>
                                         <div className="col-lg-6 text-right">
                                             <h5 className="card-title">{item.RoomPrice} Rs/-</h5>

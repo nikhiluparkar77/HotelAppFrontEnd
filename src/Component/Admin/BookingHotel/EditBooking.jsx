@@ -100,13 +100,14 @@ const EditBooking = ({ SingleRoomsFunc,EditBookingFunc,customprops,adminAuth}) =
                                 onChange={HandleChange}
                             />
 
-                            <TextBox
-                                label="Avilable"
-                                type="text"
-                                name="RoomeAvilable"
-                                value={BookingData.RoomeAvilable} 
-                                onChange={HandleChange}
-                            />
+                            
+                            <label>Avilable</label>
+                                  <select class="form-control" name="RoomeAvilable" value={BookingData.RoomeAvilable} onChange={HandleChange} id="sel1">
+                                    <option>-select Avilable-</option>
+                                    <option value="true">Avilable</option>
+                                    <option value="false">Booked</option>
+                                    
+                                 </select><br />
 
                             <Button type="submit" value="Submit" />
                         </form>
